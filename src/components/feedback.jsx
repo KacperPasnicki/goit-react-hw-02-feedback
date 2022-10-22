@@ -53,31 +53,31 @@ return 0;
         return (
             <div className='feedback'>
                 <h1>Please leave feedback</h1>
-            <div className='btns'>
-                <button className='btn' onClick={() => this.handleReviewClick('Good')}>Good</button>
-                <button className='btn' onClick={() => this.handleReviewClick('Bad')}>Bad</button>
-                <button className='btn' onClick={() => this.handleReviewClick('Neutral')}>Neutral</button>
-            </div>
-            <h2>Statistics</h2>
-            <div>
-            Good: {good}
-            </div>
+                <div className='btns'>
+                    <button className='btn' onClick={() => this.handleReviewClick('Good')}>Good</button>
+                    <button className='btn' onClick={() => this.handleReviewClick('Bad')}>Bad</button>
+                    <button className='btn' onClick={() => this.handleReviewClick('Neutral')}>Neutral</button>
+                </div>
+                    <h2>Statistics</h2>
+                <div>
+                    Good: {good}
+                </div>
             
-            <div>
-            Neutral: {neutral}
-            </div>
+                <div>
+                    Neutral: {neutral}
+                </div>
 
-            <div>
-            Bad: {bad}
-            </div>
-            <div>
-                Total: {this.countTotalFeedback()}
-            </div>
+                <div>
+                    Bad: {bad}
+                </div>
+                <div>
+                    Total: {this.countTotalFeedback()}
+                </div>
 
-            <div>
-                Positive feedback: {this.countPositiveFeedbackPercentage()}%
-            </div>
-            </div>
+                <div>
+                    Positive feedback: {this.countPositiveFeedbackPercentage()}%
+                </div>
+            </div> 
 
 )
         

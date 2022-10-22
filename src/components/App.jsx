@@ -1,16 +1,20 @@
-export const App = () => {
+export const App = ({children}) => {
   return (
     <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
+    style={{
+      height: '100%',
+      display: 'flex',
+      flexWrap: 'wrap',
+      color: '#010101',
+      padding: '50px 10px',
+      justifyContent: 'space-around'
+     
+
+      
+    }}
+  >
+   
+    {children}
+  </div>
   );
 };
