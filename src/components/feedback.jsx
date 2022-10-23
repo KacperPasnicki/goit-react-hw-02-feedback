@@ -1,6 +1,11 @@
 // import React from 'react'
 import React from 'react';
 import '../index.css'
+import { FeedbackOptions } from "components/FeedbackOptions/FeedbackOptions"
+import { Statistics } from "components/statistics/Statistics"
+import { Section } from 'components/Section/Section';
+
+
 
 export class App extends React.Component {
     
@@ -15,22 +20,22 @@ export class App extends React.Component {
     }
     handleReviewClick = (whichBtnClicked) => {
 switch(whichBtnClicked) {
-case 'Good': 
-this.setState((prevState) =>
-    ({...prevState, 
-        good: prevState.good +1
+case 'good': 
+this.setState((state) =>
+    ({ 
+        good: state.good +1
     }))
     break;
-    case 'Neutral': 
-this.setState((prevState) =>
-    ({...prevState, 
-        neutral: prevState.neutral +1
+    case 'neutral': 
+this.setState((state) =>
+    ({ 
+        neutral: state.neutral +1
     }))
     break;
-    case 'Bad': 
-this.setState((prevState) =>
-    ({...prevState, 
-        bad: prevState.bad +1
+    case 'bad': 
+this.setState((state) =>
+    ({
+        bad: state.bad +1
     }))
     break;
 default: 
@@ -41,45 +46,32 @@ return 0;
 
     }
     render()
-   
-    {
+       {
         const { good, neutral, bad,} = this.state;
-        // const options = {
-        //     {key: 0, label: 'Good'},
-        //     {key: 1, label: 'Neutral'},
-        //     {key: 2, label: 'Bad'}
-        // }
-
-        return (
+    return (
             <div className='feedback'>
-                <h1>Please leave feedback</h1>
-                <div className='btns'>
-                    <button className='btn' onClick={() => this.handleReviewClick('Good')}>Good</button>
-                    <button className='btn' onClick={() => this.handleReviewClick('Bad')}>Bad</button>
-                    <button className='btn' onClick={() => this.handleReviewClick('Neutral')}>Neutral</button>
-                </div>
-                    <h2>Statistics</h2>
-                <div>
-                    Good: {good}
-                </div>
-            
-                <div>
-                    Neutral: {neutral}
-                </div>
+              <Section title = 'title'>
+              <FeedbackOptions
+              options={Object.keys(this.state)}
+              onLeaveFeedback={this.handleReviewClick} />
+              
+              </Section>
+             <Section title = 'title2'>
+                <Statistics 
+                good = {good}
+                neutral ={neutral} 
+                bad = {bad} 
+                total = {this.countTotalFeedback()}
+                positiveFeedback = {this.countPositiveFeedbackPercentage()}
 
-                <div>
-                    Bad: {bad}
-                </div>
-                <div>
-                    Total: {this.countTotalFeedback()}
-                </div>
+                
+                />
 
-                <div>
-                    Positive feedback: {this.countPositiveFeedbackPercentage()}%
-                </div>
+             </Section>
+              
             </div> 
 
-)
+        )
         
 
 

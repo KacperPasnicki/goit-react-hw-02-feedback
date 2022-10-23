@@ -1,4 +1,4 @@
-export const App = ({children}) => {
+export const Appp = ({children}) => {
   return (
     <div
     style={{

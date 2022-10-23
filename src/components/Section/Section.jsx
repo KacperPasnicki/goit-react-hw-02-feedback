@@ -1,12 +1,10 @@
-import { FeedbackOptions } from "components/FeedbackOptions/FeedbackOptions"
-import { Statistics } from "components/statistics/Statistics"
 
-export const Section = (title, children) => {
+export const Section = ({ title, children }) => {
     
+    <div>
+ 
     
-    return <>
-    
-        <h1>{title}</h1>
+        <h2>{title}</h2>
        {children}
-    </>
+    </div>
     }

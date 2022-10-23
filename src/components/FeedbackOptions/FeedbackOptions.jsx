@@ -3,15 +3,14 @@
 
 export const FeedbackOptions = ({options, onLeaveFeedback}) =>
  {
-const btnsList = options.map(data => {
-return(<ul>
-    <li key={data}><button onClick={() => onLeaveFeedback(data)}>{data}</button></li>
+ 
+return (<ul>
+    {options.map(data => (
+    <li key={data}><button onClick={() => onLeaveFeedback(data)}>
+        {data}</button></li>))}
 
 </ul>
 
 )
-}
-   
-    )
- }
-    
+    }
+
