@@ -1,5 +1,5 @@
 
-
+import PropTypes from 'prop-types';
 import FeedbackCss from './Feedback.module.css'
 
 export const FeedbackOptions = ({options, onLeaveFeedback}) =>
@@ -15,3 +15,7 @@ return (<ul className={FeedbackCss.btns}>
 )
     }
 
+    FeedbackOptions.propTypes = {
+        options: PropTypes.array.isRequired,
+        onLeaveFeedback: PropTypes.func.isRequired
+          }
